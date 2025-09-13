@@ -1,8 +1,7 @@
-
 public class Main {
     public static void main(String[] args) {
         Collar collarRojo = new Collar("Rojo", "acero inoxidable");
-        Perro perro = new Perro("Martin", collarRojo);
+        Perro perro = new Perro("Rocky", collarRojo);
         Gato gato = new Gato("Kevin");
 
         Consultorio consultorio1 = new Consultorio(21, "Cra20Sur N20a64");
@@ -14,5 +13,17 @@ public class Main {
         gato.sonido();
         vet.atender(perro);
         vet.atender(gato);
+
+        Caja<Animal> cajaAnimales = new Caja<>();
+        cajaAnimales.set(perro);
+        Animal guardado1 = cajaAnimales.get();
+        System.out.println("Objeto en la caja: " + guardado1.getClass().getSimpleName());
+        guardado1.sonido();
+
+        cajaAnimales.set(gato);
+        Animal guardado2 = cajaAnimales.get();
+        System.out.println("Objeto en la caja: " + guardado2.getClass().getSimpleName());
+        guardado2.sonido();
+        System.out.println("Rocky en la caja da la pata");
     }
 }

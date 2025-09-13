@@ -6,9 +6,9 @@ public class Veterinaria {
         this.consultorio = consultorio;
     }
 
-    public void atender(Animal animal) {
-        System.out.println("Atendiendo en " + consultorio + ":");
-        animal.sonido();
+    public void atender(Animal a) {
+        System.out.println("Veterinaria en " + consultorio + " atiende al animal: " + a.getNombre());
+        a.sonido();
     }
 
     public Consultorio getConsultorio() {
